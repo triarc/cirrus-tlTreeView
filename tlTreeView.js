@@ -2,7 +2,7 @@ var Triarc;
 (function (Triarc) {
     var Web;
     (function (Web) {
-        var mod = angular.module("tlTreeView");
+        var mod = angular.module("tlTreeView", []);
         mod.factory("cirrusTreeViewService", function () {
             var factory = {};
             factory.selectedNode = null;
