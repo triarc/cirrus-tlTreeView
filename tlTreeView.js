@@ -2,8 +2,8 @@ var Triarc;
 (function (Triarc) {
     var Web;
     (function (Web) {
-        var mod = angular.module("tlTreeView", ["ui.bootstrap"]);
-        mod.factory("TreeViewService", function () {
+        var mod = angular.module("tlTreeView");
+        mod.factory("cirrusTreeViewService", function () {
             var factory = {};
             factory.selectedNode = null;
             factory.unselectNode = function () {
@@ -51,14 +51,14 @@ var Triarc;
             };
             return factory;
         });
-        mod.directive("treeView", ["$compile", "TreeViewService", function ($compile, treeViewService) {
+        mod.directive("treeView", ["$compile", "cirrusTreeViewService", function ($compile, treeViewService) {
                 return {
                     restrict: "A",
                     link: function (scope, elem, attrs) {
                         var model = attrs.treeView;
                         var nodeTemplate = "<div class=\"node\" ng-include=\"'" + attrs.nodeTemplate + "'\"></div>";
                         // template
-                        var template = '<ul class="tree-view">' +
+                        var template = '<ul class="cirrus-tl-tree-view">' +
                             '<li ng-repeat="node in ' + model + '">' +
                             '<div>' +
                             '<div>' +
