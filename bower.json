@@ -1,11 +1,14 @@
 {
   "name": "cirrus-tlTreeView",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [
     "Krzysztof Burlinski <kb@triarc-labs.com>",
     "Paul Tingle <pt@triarc-labs.com>"
   ],
-  "main": "tlTreeView.js",
+  "main": [
+    "tlTreeView.js",
+    "tlTreeView.css"
+  ],
   "moduleType": [
     "globals"
   ],
