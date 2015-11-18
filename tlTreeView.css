@@ -76,7 +76,7 @@
   content: "\f078";
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > span {
-  padding: 5px;
+  padding-right: 3px;
   cursor: pointer;
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > span.selected {
