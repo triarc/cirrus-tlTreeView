@@ -30,8 +30,6 @@
 .cirrus-tl-tree-view > li > div:first-child > div:first-child {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 @media (min-width: 368px) {
   .cirrus-tl-tree-view > li > div:first-child > div:first-child {
