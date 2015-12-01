@@ -26,14 +26,14 @@ var Triarc;
                         return;
                     // collapse / expand
                     if (node.children && node.children.length > 0) {
-                        node.collapsed = !node.collapsed;
+                        node.$$opened = !node.$$opened;
                     }
                 },
                 openNode: function (node) {
-                    node.collapsed = false;
+                    node.$$opened = true;
                 },
                 closeNode: function (node) {
-                    node.collapsed = true;
+                    node.$$opened = false;
                 },
                 toggleAll: function (node) {
                     // no node selected
@@ -41,13 +41,13 @@ var Triarc;
                         return;
                     // set all children equal to what the parent will be, 
                     // else can get out of sync
-                    var collapsed = !node.collapsed;
+                    var $$opened = !node.$$opened;
                     var iterate = function (child) {
                         if (!child.children) {
                             return;
                         }
                         else {
-                            child.collapsed = collapsed;
+                            child.$$opened = $$opened;
                             for (var i = 0; i < child.children.length; i++) {
                                 iterate(child.children[i]);
                             }
@@ -69,13 +69,13 @@ var Triarc;
                             '<li ng-repeat="node in ' + model + '">' +
                             '<div>' +
                             '<div>' +
-                            '<span ng-click="toggleNode(node)" ng-style="{\'visibility\': (node.children && node.children.length > 0)?\'visible\':\'hidden\'}" ng-class="!node.collapsed ? \'has-child glyphicon glyphicon-chevron-right\' : \'has-child-open glyphicon glyphicon-chevron-down\'"></span>' +
+                            '<span ng-click="toggleNode(node)" ng-style="{\'visibility\': (node.children && node.children.length > 0)?\'visible\':\'hidden\'}" ng-class="!node.$$opened ? \'has-child glyphicon glyphicon-chevron-right\' : \'has-child-open glyphicon glyphicon-chevron-down\'"></span>' +
                             '<span ng-click="selectNode(node)" class=\'template-container\' ng-class="{\'selected\' : node.selected}">' +
                             nodeTemplate +
                             '</span>' +
                             '</div>' +
                             '</div>' +
-                            '<div class="cirrus-tl-tree-view" collapse="!node.collapsed" tree-view="node.children" tree-root="false" node-template="' + attrs.nodeTemplate + '"></div>' +
+                            '<div class="cirrus-tl-tree-view" collapse="!node.$$opened" tree-view="node.children" tree-root="false" node-template="' + attrs.nodeTemplate + '"></div>' +
                             '</li>' +
                             '</ul>';
                         // root node
