@@ -55,6 +55,7 @@
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > .template-container {
   display: inline-block;
   width: 92%;
+  padding: 3px 5px;
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > .template-container:hover {
   background-color: #EAF3F6;
