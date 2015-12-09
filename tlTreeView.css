@@ -56,9 +56,8 @@
   display: inline-block;
   width: 92%;
 }
-.cirrus-tl-tree-view > li > div:first-child > div:first-child > .template-container :hover {
+.cirrus-tl-tree-view > li > div:first-child > div:first-child > .template-container:hover {
   background-color: #EAF3F6;
-  padding: 3px 5px;
   border-radius: 5px;
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > i.has-child {
