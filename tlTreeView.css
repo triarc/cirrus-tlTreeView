@@ -35,7 +35,7 @@
 @media (min-width: 368px) {
   .cirrus-tl-tree-view > li > div:first-child > div:first-child {
     float: left;
-    width: auto;
+    width: 100%;
   }
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > i {
@@ -54,6 +54,10 @@
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > .template-container {
   display: inline-block;
+  width: 92%;
+}
+.cirrus-tl-tree-view > li > div:first-child > div:first-child > .template-container :hover {
+  background-color: #EAF3F6;
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > i.has-child {
   cursor: pointer;
@@ -77,11 +81,13 @@
   content: "\f078";
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > span {
-  padding-right: 3px;
   cursor: pointer;
+  padding: 2px 5px;
+  width: 100%;
 }
 .cirrus-tl-tree-view > li > div:first-child > div:first-child > span.selected {
   background: #dde6e9;
+  border-radius: 5px;
 }
 .cirrus-tl-tree-view > li > div:first-child > div:nth-child(2) {
   position: relative;
@@ -94,4 +100,5 @@
 }
 .cirrus-tl-tree-view .node {
   display: inline-block;
+  width: 100%;
 }

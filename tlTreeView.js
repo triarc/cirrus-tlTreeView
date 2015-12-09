@@ -75,7 +75,7 @@ var Triarc;
                             '</span>' +
                             '</div>' +
                             '</div>' +
-                            '<div class="cirrus-tl-tree-view" ng-if="node.$$opened" tree-view="node.children" tree-root="false" node-template="' + attrs.nodeTemplate + '"></div>' +
+                            '<div class="cirrus-tl-tree-view" collapse="!node.$$opened" tree-view="node.children" tree-root="false" node-template="' + attrs.nodeTemplate + '"></div>' +
                             '</li>' +
                             '</ul>';
                         // root node
