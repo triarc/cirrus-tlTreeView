@@ -58,10 +58,11 @@ var Triarc;
             };
             return factory;
         });
-        mod.directive("treeView", ["$compile", "cirrusTreeViewService", function ($compile, treeViewService) {
+        mod.directive("treeView", ["$compile", "$parse", "cirrusTreeViewService", function ($compile, $parse, treeViewService) {
                 return {
                     restrict: "A",
                     link: function (scope, elem, attrs) {
+                        var canSelectCallbackFn = $parse(attrs.canSelectCallbackFn);
                         var model = attrs.treeView;
                         var nodeTemplate = "<div class=\"node\" ng-include=\"'" + attrs.nodeTemplate + "'\"></div>";
                         // template
@@ -86,7 +87,17 @@ var Triarc;
                             };
                             // select when name clicked
                             scope.selectNode = function (node) {
-                                treeViewService.selectNode(node);
+                                var response = canSelectCallbackFn(scope, { node: node });
+                                if (Triarc.hasValue(response)) {
+                                    response.then(function (result) {
+                                        if (result) {
+                                            treeViewService.selectNode(node);
+                                        }
+                                    });
+                                }
+                                else {
+                                    treeViewService.selectNode(node);
+                                }
                             };
                         }
                         var compiledHtml = $compile(template)(scope);
